@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>sayuri_design</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: "glo8cas",
+                scriptTimeout: 3000,
+                async: true,
+            },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className =
+                        h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || (a && a != "complete" && a != "loaded")) return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config);
+                } catch (e) { }
+            };
+            s.parentNode.insertBefore(tk, s);
+        })(document);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>
+                <a href="./index.html">
+                    <img src="./images/logo@2x.png" alt="sayuri_designのロゴ">
+                </a>
+            </h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="works.html">WORKS</a></li>
+                <li><a href="./index.html#CONTACT">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="WORKS">
+        <div class="section__title">
+            <h3>WORKS</h3>
+        </div>
+        <div class="container">
+            <div class="fluid__square1"></div>
+            <div class="fluid__square2"></div>
+            <div class="fluid__square3"></div>
+
+        </div>
+        <div class="works__title--banner">
+            <img src="./images/hamburger_banner_pop_works@2x.png" alt="ハンバーガーバナー（POP.ver）/サンプル">
+        </div>
+        <div class="works__box">
+            <div class="works__page">
+                <h4 class="works__page--title">ハンバーガーバナー（POP.ver）/サンプル</h4>
+                <dl>
+                    <dt>制作箇所</dt>
+                    <dd>デザイン</dd>
+                    <dt>使用ツール</dt>
+                    <dd>Illustrator / Photoshop</dd>
+                    <dt>制作期間</dt>
+                    <dd>4日間</dd>
+                    <dt>制作POINT</dt>
+                    <dd>ポップさを出すためにハンバーガーをイラストっぽくかすれた風合いにし、
+                        字体も特徴的なデザインで印象に残るデザインにしました。<br>
+                        ハンバーガーを大きく配置することでデラックス感を感じられるようにイメージしました。
+                    </dd>
+                </dl>
+            </div>
+
+            <div class="works__page--bottom">
+                <a href="works_working.html" class="works_pages_prev">PREV</a>
+                <a href="works.html" class="works_pages_return">一覧へ戻る</a>
+                <a href="works_hamburger_lux.html" class="works_pages_next">NEXT</a>
+            </div>
+            <div class="works__guidance">
+                <p class="works__guidance--text">ご相談・ご依頼お待ちしております。<br></p>
+                <p class="works__guidance--text2">お気軽にお問い合わせください。</p>
+                <a href="./index.html#CONTACT" class="contact__btn">お問い合わせはこちら</a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="fluid__footer-rig1"></div>
+            <div class="fluid__footer-rig2"></div>
+            <div class="fluid__footer-lef1"></div>
+        </div>
+        <div class="footer__nav">
+            <nav class="footer__nav--area">
+                <ul>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="works.html">WORKS</a></li>
+                    <li><a href="./index.html#CONTACT">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="Copyright">©2024 sayuri_design</p>
+        <p class="totop" style>
+            <a href="#header">
+                <img src="./images/pc_topbutton@2x.png">
+            </a>
+        </p>
+    </footer>
+    <script>
+        //ハンバーガーメニュー
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger,.title").toggleClass("open");
+                $(".header__nav").fadeToggle();
+            });
+        });
+        //★ページトップへ戻る(途中から出現)
+        $(function () {
+            var pagetop = $(".totop");
+            pagetop.hide();
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 500) {
+                    pagetop.fadeIn();
+                } else {
+                    pagetop.fadeOut();
+                }
+            });
+            pagetop.click(function () {
+                $("body,html").animate({ scrollTop: 0 }, 500);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>

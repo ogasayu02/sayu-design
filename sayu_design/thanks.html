@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>sayuri_design</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: "glo8cas",
+                scriptTimeout: 3000,
+                async: true,
+            },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className =
+                        h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || (a && a != "complete" && a != "loaded")) return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config);
+                } catch (e) { }
+            };
+            s.parentNode.insertBefore(tk, s);
+        })(document);
+    </script>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <div class="logo">
+            <h1>
+                <a href="./index.html">
+                    <img src="./images/logo@2x.png" alt="sayuri_designのロゴ">
+                </a>
+            </h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="#TOP">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="works.html">WORKS</a></li>
+                <li><a href="./index.html#CONTACT">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="thanks_area">
+        <div class="thanks-page">
+            <p class="thanks_title">お問い合わせを受付けました<br></p>
+            <p class="thanks_text">
+                この度はsayuri_designにお問い合わせいただき、誠にありがとうございます。<br>3営業日以内にご返信させていただきます。<br>今しばらくお待ちくださいませ。
+            </p>
+        </div>
+        <div class="monster">
+            <img src="./images/monster_gr@2x.png" alt="グリーンのモンスターのイラスト">
+            <img src="./images/monster_ye@2x.png" alt="イエローのモンスターのイラスト">
+            <img src="./images/monster_gr_1@2x.png" alt="グレーのモンスターのイラスト">
+        </div>
+    </div>
+
+
+
+    <script>
+        //ハンバーガーメニュー
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger,.title").toggleClass("open");
+                $(".header__nav").fadeToggle();
+            });
+        });
+
+    </script>
+</body>
