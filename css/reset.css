@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+/* リセット */
+html,
+body,
+header,
+footer,
+main,
+section,
+div,
+h1,
+h2,
+h3,
+ul,
+li,
+p,
+dl {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    color: #788e78;
+    font-family: "zen-maru-gothic", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-feature-settings: "palt";
+    box-sizing: border-box;        
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;/*ふわっとした動き*/
+}
+
+a:hover {
+    opacity: 0.7;/*カーソルあてると薄くなる*/
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+    border: none;
+}

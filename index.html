@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <title>sayuri_design</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- font -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: "glo8cas",
+                scriptTimeout: 3000,
+                async: true,
+            },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className =
+                        h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || (a && a != "complete" && a != "loaded")) return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config);
+                } catch (e) { }
+            };
+            s.parentNode.insertBefore(tk, s);
+        })(document);
+    </script>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- AOS.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<body>
+    <!-- loading -->
+    <div class="loading-bg">
+        <img src="./images/monster_gr@2x.png" alt="グリーンのモンスターのイラスト" />
+        <img src="./images/monster_ye@2x.png" alt="イエローのモンスターのイラスト" />
+        <img src="./images/monster_gr_1@2x.png" alt="グレーのモンスターのイラスト" />
+    </div>
+    <script>
+        $(function () {
+            // セッションストレージを利用して初回アクセスかどうかを判定
+            var isFirstAccess = !sessionStorage.getItem("access");
+            sessionStorage.setItem("access", "true"); // アクセス済みとして記録
+
+            if (isFirstAccess) {
+                // 初回アクセス時の処理: ローディングを3秒後に非表示にする
+                setTimeout(function () {
+                    $(".loading-bg").fadeOut();
+                }, 3000);
+            } else {
+                // 2回目以降のアクセス時: ローディング画面をすぐに非表示にする
+                $(".loading-bg").fadeOut();
+            }
+
+            // アニメーション終了時の処理を各`.mv__img`要素にバインド
+            $(".mv__img").on("animationend", function (event) {
+                console.log("Animation ended for", event.target);
+                // 必要に応じて追加のスタイル変更をここに記述
+            });
+        });
+    </script>
+    <!-- header -->
+    <header id="header" class="header-top">
+        <div class="logo">
+            <h1>
+                <a href="./index.html">
+                    <img src="./images/logo@2x.png" alt="sayuri_designのロゴ" />
+                </a>
+            </h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="#TOP">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="works.html">WORKS</a></li>
+                <li><a href="#CONTACT">CONTACT</a></li>
+            </ul>
+        </nav>
+
+        <!-- mainvisual -->
+        <div class="title">
+            <h2>イメージを、<br class="sp__br">かたちに</h2>
+        </div>
+        <div class="mv">
+            <div class="mv__img">
+                <img src="./images/monster_gr@2x.png" alt="グリーンのモンスターのイラスト" />
+            </div>
+            <div class="mv__img">
+                <img src="./images/monster_ye@2x.png" alt="イエローのモンスターのイラスト" />
+            </div>
+            <div class="mv__img">
+                <img src="./images/monster_gr_1@2x.png" alt="グレーのモンスターのイラスト" />
+            </div>
+        </div>
+        <div class="scroll">
+            <span class="scroll-text">Scroll</span>
+            <span class="scroll-line"></span>
+        </div>
+    </header>
+
+    <!-- ABOUT -->
+    <section id="ABOUT">
+        <div class="section__title">
+            <h3>ABOUT</h3>
+        </div>
+        <div class="container">
+            <div class="fluid"></div>
+            <div class="fluid__yellow"></div>
+            <div class="fluid-top"></div>
+        </div>
+        <!-- sp版 -->
+        <div class="container">
+            <div class="fluid_sp-gr"></div>
+            <div class="fluid_sp-ye"></div>
+        </div>
+        <div class="about__text">
+            <h3>思いを、<br class="sp__br" />かたちに</h3>
+            <p>
+                デザインはどんなカタチにも自由に変えることができます<br>お客様の希望や悩みを共有し、<br>より良いデザインを作りお届けしたい、<br />ともに創り上げていきたいと考えています
+            </p>
+        </div>
+        <a href="about.html" class="btn__box">MORE</a>
+    </section>
+
+    <!-- WORKS -->
+    <section id="WORKS">
+        <div class="section__title">
+            <h3>WORKS</h3>
+        </div>
+
+        <div class="top__works">
+            <div data-aos="fade-up" data-aos-duration="2000">
+                <ul class="top__works--area">
+                    <li>
+                        <a href="works_salon.html"><img src="./images/salon_web@2x.png" alt="美容室のWebサイトサンプル" />
+                            <p class="works__text">美容室サイト/サンプル</p>
+                        </a>
+                        <p class="works__text-category">Web design</p>
+                    </li>
+                    <li>
+                        <a href="works_trip.html"><img src="./images/trip_web@2x.png" alt="旅行アプリのバナーサンプル" />
+                            <p class="works__text">旅行アプリバナー/サンプル</p>
+                        </a>
+                        <p class="works__text-category">Banner</p>
+                    </li>
+                    <li>
+                        <a href="works_hamburger_pop.html"><img src="./images/hamburger_pop@2x.png"
+                                alt="ハンバーガーポップバージョンバナーサンプル" />
+                            <p class="works__text">バーガー(POP.ver)/サンプル</p>
+                        </a>
+                        <p class="works__text-category">Banner</p>
+                    </li>
+                    <li>
+                        <a href="works_designcafe.html">
+                            <img src="./images/designcafe_web@2x.png" alt="デザインカフェWebサイトコーディング" />
+                            <p class="works__text">design cafe/サンプル</p>
+                        </a>
+                        <p class="works__text-category">Coding</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- sp版 -->
+        <div class="sp__top--works">
+            <ul class="top__works--area-sp">
+                <li>
+                    <a href="works_salon.html"><img src="./images/salon_web@2x.png" alt="美容室のWebサイトサンプル" />
+                        <p class="works__text">美容室サイト/サンプル</p>
+                    </a>
+                    <p class="works__text-category">Web design</p>
+                </li>
+                <li>
+                    <a href="works_trip.html"><img src="./images/trip_web@2x.png" alt="旅行アプリのバナーサンプル" />
+                        <p class="works__text">旅行アプリバナー/サンプル</p>
+                    </a>
+                    <p class="works__text-category">Banner</p>
+                </li>
+                <li>
+                    <a href="works_hamburger_pop.html"><img src="./images/hamburger_pop@2x.png"
+                            alt="ハンバーガーポップバージョンバナーサンプル" />
+                        <p class="works__text">バーガー(POP.ver)/サンプル</p>
+                    </a>
+                    <p class="works__text-category">Banner</p>
+                </li>
+                <li>
+                    <a href="works_designcafe.html"><img src="./images/designcafe_web@2x.png"
+                            alt="デザインカフェWebサイトコーディング" />
+                        <p class="works__text">design cafe/サンプル</p>
+                    </a>
+                    <p class="works__text-category">Coding</p>
+                </li>
+            </ul>
+        </div>
+        <a href="works.html" class="btn__box">MORE</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="CONTACT">
+        <div class="section__title">
+            <h3>CONTACT</h3>
+        </div>
+        <div class="container">
+            <div class="fluid__contact-rig-1"></div>
+            <div class="fluid__contact-rig-2"></div>
+            <div class="fluid__contact-lef-1"></div>
+            <div class="fluid__contact-lef-2"></div>
+        </div>
+
+        <p class="contact-text">
+            制作のご依頼やご相談、ご不明な点等ございましたらお気軽にお問い合わせください。<br />3営業日以内にご連絡をさせていただきます。
+        </p>
+
+        <form class="c-form"
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfEOxETLUHTmL8qjB4vnM9LkWmCee1JSqaAGY27adYheVeoPg/formResponse"
+            method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-name">お名前<span class="c-form__required"></span></label>
+                <input name="entry.807180717" class="c-form__input" id="field-name" placeholder="Your Name" type="text"
+                    required="required" />
+            </div>
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-mail">メールアドレス<span class="c-form__required"></span></label>
+                <input name="entry.966101876" class="c-form__input" id="field-mail" placeholder="Mail Address"
+                    type="email" required="required" />
+            </div>
+            <div class="c-form__item">
+                <label class="c-form__label" for="field-message">メッセージ内容</label>
+                <textarea name="entry.1728323009" class="c-form__input" id="field-message"
+                    placeholder="Message"></textarea>
+            </div>
+            <div class="c-form__submit">
+                <button type="submit">送信</button>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            let submitted = false;
+        </script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+            onload="if(submitted){window.location='thanks.html';}">
+        </iframe>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer__nav">
+            <nav class="footer__nav--area">
+                <ul>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="works.html">WORKS</a></li>
+                    <li><a href="./index.html#CONTACT">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="Copyright">©2024 sayuri_design</p>
+        <p class="totop" style>
+            <a href="#header">
+                <img src="./images/pc_topbutton@2x.png" />
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        AOS.init();
+        //★ハンバーガーメニュー
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger").toggleClass("open");
+                $(".header__nav ").fadeToggle();
+            });
+        });
+
+        //★ページトップへ戻る(途中から出現)
+        $(function () {
+            var pagetop = $(".totop");
+            pagetop.hide();
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 500) {
+                    pagetop.fadeIn();
+                } else {
+                    pagetop.fadeOut();
+                }
+            });
+            pagetop.click(function () {
+                $("body,html").animate({ scrollTop: 0 }, 500);
+                return false;
+            });
+        });
+
+        //★slick
+        $(function () {
+            // ウィンドウがリサイズされるたび、またはページがロードされたときに関数を実行
+            $(window).on("load resize", function () {
+                if ($(window).width() <= 767) {
+                    // 画面幅が767px以下の場合のみ実行
+                    // Slickスライダーが初期化されていない場合のみ初期化
+                    if (!$(".top__works--area-sp").hasClass("slick-initialized")) {
+                        $(".top__works--area-sp").slick({
+                            autoplay: true, // 自動再生を有効にする
+                            autoplaySpeed: 2000, // 自動再生の速度を設定
+                            centerMode: true,
+                            centerPadding: "20%",
+                            slidesToShow: 1,
+                            adaptiveHeight: true,
+                            infinite: true,
+                        });
+                    }
+
+                    // 画像の幅を調整
+                    $(".top__works--area-sp img").each(function () {
+                        var imgWidth = $(this)[0].naturalWidth / 2; // 元の画像サイズの半分のサイズに調整
+                        $(this).css("width", imgWidth);
+                    });
+                } else {
+                    // 画面が767pxより大きい場合はSlickスライダーを破棄
+                    if ($(".top__works--area-sp").hasClass("slick-initialized")) {
+                        $(".top__works--area-sp").slick("unslick");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

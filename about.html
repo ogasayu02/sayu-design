@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>sayuri_design</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: "glo8cas",
+                scriptTimeout: 3000,
+                async: true,
+            },
+                h = d.documentElement,
+                t = setTimeout(function () {
+                    h.className =
+                        h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+                }, config.scriptTimeout),
+                tk = d.createElement("script"),
+                f = false,
+                s = d.getElementsByTagName("script")[0],
+                a;
+            h.className += " wf-loading";
+            tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+            tk.async = true;
+            tk.onload = tk.onreadystatechange = function () {
+                a = this.readyState;
+                if (f || (a && a != "complete" && a != "loaded")) return;
+                f = true;
+                clearTimeout(t);
+                try {
+                    Typekit.load(config);
+                } catch (e) { }
+            };
+            s.parentNode.insertBefore(tk, s);
+        })(document);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <h1>
+                <a href="./index.html">
+                    <img src="./images/logo@2x.png" alt="sayuri_designのロゴ">
+                </a>
+            </h1>
+        </div>
+        <div class="hamburger">
+            <span></span>
+        </div>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="works.html">WORKS</a></li>
+                <li><a href="./index.html#CONTACT">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ABOUT -->
+    <section id="ABOUT">
+        <div class="section__title">
+            <h3>ABOUT</h3>
+        </div>
+        <div class="container">
+            <div class="fluid__about-pro"></div>
+        </div>
+        <div class="about__contents">
+            <div class="about__area">
+                <picture>
+                    <source srcset="./images/sp_portfolio@2x.png" media="(max-width:767px)">
+                    <img src="./images/pc_profile@2x.png" alt="プロフィールイラスト">
+                </picture>
+            </div>
+
+            <div class="about__text--area">
+                <p class="name">Sayuri</p>
+                <div class="profile">
+                    <p>青森生まれ、宮城在住です。</p><br>
+                    <p> 幼少期の頃から洋服が好きで夜間の服飾専門学校専攻しました。<br>卒業後は写真スタジオやコールセンターなど接客や事務を経験しました。</p><br>
+                    <p>現在は医療福祉施設や病院のクリーニング業務のお仕事をしています。</p><br>
+                    <p>自分には何か強みになるスキルがないことがコンプレックスで、自分を変えたいと思い興味のあったデザインの勉強を始めました。最近はFigmaを勉強中です。</p><br>
+                    <p>趣味は美味しいごはん屋さんを探すこと、アニメ・漫画を見ることです。 </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skill -->
+    <section>
+        <div class="section__title">
+            <h3>SKILL</h3>
+        </div>
+        <ul class="skill__area">
+            <li class="design">
+                <img src="./images/design_skill@2x.png" alt="デザインスキル">
+                <p class="skill__title">Design Skill<br></p>
+                <span>デザインスキル</span><br>
+                <p class="skill__area--text">Illustrator/Photoshop</p>
+            </li>
+            <li class="coding">
+                <img src="./images/Coding_skill@2x.png" alt="コーディングスキル">
+                <p class="skill__title">Coding Skill<br></p>
+                <span>コーディングスキル</span><br>
+                <p class="skill__area--item">HTML/CSS<br>JavaScript/jQuery</p>
+            </li>
+        </ul>
+        <a href="works.html" class="works__btn">作品一覧はこちら</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+        <div class="footer__nav">
+            <nav class="footer__nav--area">
+                <ul>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="works.html">WORKS</a></li>
+                    <li><a href="./index.html#CONTACT">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="Copyright">©2024 sayuri_design</p>
+        <p class="totop" style>
+            <a href="#header">
+                <img src="./images/pc_topbutton@2x.png">
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        //ハンバーガーメニュー
+        $(function () {
+            $(".hamburger").on("click", function () {
+                $(".hamburger,.title").toggleClass("open");
+                $(".header__nav").fadeToggle();
+            });
+        });
+        //★ページトップへ戻る(途中から出現)
+        $(function () {
+            var pagetop = $(".totop");
+            pagetop.hide();
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 500) {
+                    pagetop.fadeIn();
+                } else {
+                    pagetop.fadeOut();
+                }
+            });
+            pagetop.click(function () {
+                $("body,html").animate({ scrollTop: 0 }, 500);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
